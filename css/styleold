@@ -1,0 +1,401 @@
+/* ===== GRUNDLÆGGENDE & CSS VARIABLER ===== */
+:root {
+    /* Farvepalette - juster efter behov */
+    --primary-color: #222; /* Mørk grå/sort til tekst og elementer */
+    --secondary-color: #f4f4f4; /* Lys grå til baggrunde */
+    --header-bg: #1a1a1a; /* Lidt mørkere end #333 for dybde */
+    --text-color: #333;
+    --light-text-color: #fff;
+    --accent-color: #007bff; /* En klar blå som accent - vælg en du kan lide! */
+                             /* Andre accent muligheder: #ff8c00 (mørk orange), #e94e77 (pink) */
+    --border-color: #ddd;
+
+    /* Typografi */
+    --font-primary: 'Montserrat', sans-serif; /* Eksempel - se Google Fonts */
+    --font-secondary: 'Lato', sans-serif;     /* Eksempel */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-secondary); /* Brug din valgte font */
+    line-height: 1.7; /* Lidt mere luft */
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+}
+
+/* Tilføj Google Fonts i toppen af din CSS eller i <head> på HTML-siderne:
+   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap');
+   Du skal også linke til dem i dine HTML-filers <head> sektion:
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+*/
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary); /* Brug din valgt overskrift-font */
+    font-weight: 700; /* Ofte pænere for overskrifter */
+    color: var(--primary-color);
+}
+
+/* ===== HEADER & NAVIGATION ===== */
+header {
+    background: var(--header-bg); /* Brug variabel */
+    color: var(--light-text-color);
+    padding: 0.8rem 5%; /* Lidt mindre padding i toppen/bunden */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtil skygge for adskillelse */
+}
+
+.title {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  font-size: 20.2rem;
+  border-bottom: 3px solid var(--accent-color);
+}
+
+.logo-container { /* Tilføjet for bedre kontrol over logoets plads */
+    display: flex;
+    align-items: center;
+}
+
+.logo-container .logo-img { /* Klasse for dit <img> logo */
+    max-height: 100px; /* Juster efter dit logos proportioner */
+    width: auto; /* Bevar proportioner */
+    margin-right: 10px; /* Hvis du vil have tekst ved siden af */
+}
+/* Fjern .logo-container .logo hvis du KUN bruger billedlogo */
+.logo-container .logo-text { /* Hvis du stadig vil have tekst G&L Visuals */
+    color: var(--light-text-color);
+    text-decoration: none;
+    font-size: 1.6rem; /* Juster størrelse */
+    font-family: var(--font-primary);
+    font-weight: 700;
+}
+
+
+.main-nav ul li a {
+    color: var(--light-text-color);
+    text-decoration: none;
+    padding: 0.5rem 0.75rem; /* Lidt mere padding */
+    font-weight: 500; /* Lettere vægt for nav links */
+    font-family: var(--font-primary);
+    border-radius: 4px; /* Subtil afrunding */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active-link { /* Tilføj .active-link til den aktuelle side */
+    background-color: rgba(255, 255, 255, 0.1); /* Let highlight på hover/aktiv */
+    color: var(--accent-color); /* Accent farve på hover */
+}
+
+/* ===== MAIN CONTENT AREA ===== */
+main {
+    padding: 30px 5%; /* Mere padding i toppen/bunden */
+    max-width: 1200px;
+    margin: 0 auto; /* Fjern top/bund margin, da header er sticky */
+    background-color: #fff; /* Ren hvid for indholdsområdet */
+    min-height: calc(100vh - 150px); /* Ca. højde af header + footer, sikrer footer er i bunden */
+}
+
+.homepage-main h1 {
+    font-size: 2.5rem; /* Større H1 på forsiden */
+    margin-bottom: 10px;
+}
+.homepage-main .tagline {
+    font-size: 1.3rem;
+    color: #666; /* Lidt mørkere for bedre kontrast */
+    margin-bottom: 40px; /* Mere plads under tagline */
+}
+
+.content-page h1 {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    font-size: 2.2rem;
+    border-bottom: 3px solid var(--accent-color); /* Brug accentfarve til understregning */
+}
+
+/* ===== HOMEPAGE SECTIONS ===== */
+.sections-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Lidt større minimumsbredde */
+    gap: 25px;
+}
+
+.section-link {
+    border: none; /* Fjern standard kant */
+    border-radius: 8px; /* Mere afrundede hjørner */
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Start med en subtil skygge */
+}
+.section-link:hover {
+    transform: translateY(-8px) scale(1.02); /* Lidt mere markant hover effekt */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.section-link img {
+    width: 100%;
+    height: 220px; /* Lidt højere billeder */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease; /* Tilføj zoom effekt på billedet */
+}
+.section-link:hover img {
+    transform: scale(1.1); /* Zoom ind på billedet ved hover */
+}
+
+.section-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.75); /* Lidt mørkere for bedre kontrast */
+    color: var(--light-text-color);
+    padding: 15px 10px; /* Mere padding */
+    text-align: center;
+    font-size: 1.3rem; /* Større tekst */
+    font-family: var(--font-primary);
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+.section-link:hover .section-title {
+    background-color: rgba(0,0,0, 0.9); /* Mørkere overlay på hover */
+}
+
+/* ===== CONTACT FORM ===== */
+.contact-form label {
+    font-weight: 500; /* Lidt lettere font-weight */
+    color: #555;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    border: 1px solid var(--border-color);
+    border-radius: 5px; /* Afrundede felter */
+    padding: 12px; /* Mere padding i felter */
+}
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent-color); /* Accentfarve på focus */
+    box-shadow: 0 0 0 2px rgba(var(--accent-color-rgb), 0.2); /* Tilføj accent-color-rgb hvis du bruger rgba */
+    outline: none;
+}
+
+.contact-form button {
+    background: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.contact-form button:hover {
+    background: var(--accent-color); /* Accentfarve på hover */
+    transform: translateY(-2px);
+}
+.contact-info {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0 5px 5px 0;
+}
+
+/* ===== EVENTS LIST (Galleri.html) ===== */
+.event-list {
+    list-style: none;
+    padding: 0;
+}
+.event-list li {
+    margin-bottom: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: #fff;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    overflow: hidden; /* For pænere look hvis du tilføjer billede senere */
+}
+.event-list li:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+.event-list li a {
+    text-decoration: none;
+    color: var(--text-color);
+    display: block; /* Gør hele item klikbart */
+    padding: 20px 25px; /* Mere padding */
+}
+.event-list li a:hover h2 {
+    color: var(--accent-color);
+}
+.event-list h2 {
+    margin-bottom: 8px;
+    font-size: 1.6rem;
+}
+.event-list p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* ===== PHOTO GALLERY (individual event pages) ===== */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Lidt større thumbnails */
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.photo-item {
+    border: 1px solid var(--border-color);
+    padding: 8px; /* Lidt mere padding omkring billedet */
+    text-align: center;
+    background-color: #fff;
+    border-radius: 6px; /* Afrundede hjørner */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.photo-item:hover {
+    transform: scale(1.05); /* Let zoom på hover */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 150px; /* Fast højde for thumbnails, eller 'auto' for variabel */
+    object-fit: cover; /* Sikrer billedet dækker, kan beskære */
+    display: block;
+    margin-bottom: 8px;
+    border-radius: 4px; /* Afrundede hjørner på selve billedet */
+}
+
+.photo-item figcaption {
+    font-size: 0.9em;
+    color: #555;
+    font-weight: 500;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: var(--header-bg); /* Samme som header */
+    color: #aaa; /* Lidt lysere end ren hvid for footer tekst */
+    margin-top: 40px; /* Sørg for der er plads over footer */
+    font-size: 0.9rem;
+}
+footer p a { /* Hvis du tilføjer links i footeren */
+    color: #bbb;
+    text-decoration: none;
+}
+footer p a:hover {
+    color: var(--accent-color);
+}
+
+
+/* ===== RESPONSIVE JUSTERINGER (Burger Menu) ===== */
+
+.burger-menu span {
+    background-color: var(--light-text-color); /* Sikrer hvide streger */
+}
+
+@media (max-width: 768px) {
+    .main-nav {
+        /* Ingen ændringer her, din eksisterende er fin */
+        /* ... dine eksisterende regler ... */
+        background-color: #2a2a2a; /* Lidt lysere for mobilmenuens baggrund */
+        width: 100%; /* Fuld bredde for mobilmenu */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .main-nav ul li a {
+        padding: 15px; /* Mere padding på mobil */
+        font-size: 1.1rem;
+    }
+
+    .off-screen-menu {
+
+      height: 100vh;
+      width: 100;
+      max-width: 450px;
+      position: fixed;
+      top: 0;
+      right: -450px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 3rem;
+      transition: 0.3s ease;
+
+    }
+.off-screen-menu.active {
+  right: 0;
+}
+
+.nav {
+padding: 1rem;
+display: flex;
+background color: rgb(34,37,49);
+border-radius: 25px;
+position: absolute;
+top: 50%;
+left:50%;
+transform translate(-50%, .50%);
+transition: 0.3s ease;
+}
+.ham-menu span:nth-child(1) {
+  top: 25%
+}
+
+.ham-menu span:nth-child(3) {
+  top: 75%
+}
+    .main-nav.active {
+        display: flex;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .burger-menu.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        margin-bottom: 25%;
+    }
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .burger-menu.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        margin-top: 75%;
+    }
+
+    .sections-container {
+        grid-template-columns: 1fr; /* Stak sektioner på mindre skærme */
+    }
+
+    .homepage-main h1 {
+        font-size: 2rem;
+    }
+    .homepage-main .tagline {
+        font-size: 1.1rem;
+    }
+
+    .photo-gallery { /* Færre kolonner for billeder på mobil */
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}

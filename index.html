@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G&L Visuals - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+  <div class="logo-container">
+      <a href="index.html" class="logo-container"> <!-- Sørg for .logo-container klasse her for CSS -->
+          <img src="images/LogoHvid.png" alt="G&L Visuals Logo" class="logo-img">
+     </a>
+  </div>
+
+<div class="header-title">
+  <h4>G&L Visuals</h4>
+</div>
+
+  <!-- Burger Menu Knap (vises kun på mobil) -->
+  <button class="burger-menu" id="burgerMenu" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+  </button>
+
+  <!-- Off-Screen Menu (skjult som standard, vises ved burger-klik) -->
+  <div class="off-screen-menu" id="offScreenMenu">  <!-- Tilføjet ID for JavaScript -->
+      <ul>
+          <li><a href="Index.html">Forside</a></li> <!-- Tilføjet forside link -->
+          <li><a href="Galleri.html">Galleri</a></li>
+          <li><a href="Priser.html">Priser</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="brugeraftale.html">Brugeraftale</a></li>
+      </ul>
+  </div>
+</header>
+
+    <main class="homepage-main">
+        <h1>Velkommen til G&L Visuals</h1>
+        <p class="tagline">Capturing moments, creating memories.</p>
+
+        <div class="sections-container">
+            <a href="Sport.html" class="section-link">
+                <img src="images/Sport1.jpg" >
+                <div class="section-title">Sport</div>
+
+            </a>
+            <a href="Event.html" class="section-link">
+                <img src="images/Elliot-Gilde-1.jpg" >
+                <div class="section-title">Events</div>
+
+            </a>
+            <a href="Produkt.html" class="section-link">
+              <div class="highlight-banner">Work in progress</div>
+              <!--  <img src="images/Sport2.jp" > -->
+                <div class="section-title">Produkt</div>
+
+            </a>
+            <a href="Portræt.html" class="section-link">
+              <div class="highlight-banner">Work in progress</div>
+                <!-- <img src="images/section1-thumb.jpg"> -->
+                <div class="section-title">Portræt</div>
+              </a>
+
+            <a href="Galleri.html" class="section-link">
+                <img src="images/Galleri-page.jpg">
+                <div class="section-title">Gallerier fra tidligere events</div>
+            </a>
+        </div>
+    </main>
+
+<footer>
+    <p>© <span id="currentYear"></span> G&L Visuals. All rights reserved.</p>
+    <a class="footer-email-link" href="mailto:kontakt.glvisuals@gmail.com"><h6>kontakt.glvisuals@gmail.com</h6></a>
+    <p><a class="footer-link" href="brugeraftale.html">Brugeraftale</a></p>
+
+</footer>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,885 @@
+/* ===== GRUNDLÆGGENDE & CSS VARIABLER ===== */
+:root {
+    /* Farvepalette - juster efter behov */
+    --primary-color: #222; /* Mørk grå/sort til tekst og elementer */
+    --secondary-color: #f4f4f4; /* Lys grå til baggrunde */
+    --header-bg: #1a1a1a; /* Lidt mørkere end #333 for dybde */
+    --text-color: #333;
+    --light-text-color: #fff;
+    --accent-color: #007bff; /* Blå accent - vælg din egen hvis ønsket */
+                             /* Andre accent muligheder: #ff8c00 (mørk orange), #e94e77 (pink), dit firmas farve */
+    --border-color: #ddd;
+
+    /* Typografi - Vælg dine foretrukne Google Fonts */
+    --font-primary: 'Montserrat', sans-serif; /* Til overskrifter */
+    --font-secondary: 'Lato', sans-serif;     /* Til brødtekst */
+}
+
+/* Importer Google Fonts her eller link dem i HTML <head> */
+/* Sørg for, at font-navnene matcher dem i :root variablerne */
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@500;700&display=swap'); */
+/* HUSK OGSÅ AT TILFØJE <link> TAGS I DIN HTML <head> FOR GOOGLE FONTS:
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-secondary);
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+
+}
+
+h1, h2, h5 {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    margin-top: 75px;
+    margin-bottom: 25px;
+}
+
+h3 {
+  font-family: var(--font-primary);
+  font-weight: 500;
+  color: var(--primary-color);
+  text-align: center;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+h6 {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: lightgrey;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+p{
+  text-align: center;
+  font-size: 1.3rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.header-title h4 {
+  background-image: linear-gradient(darkgrey, white);
+  color: transparent;
+  background-clip: text;
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 1px;
+  margin-bottom: 1px;
+
+}
+
+
+
+/* ===== HEADER & NAVIGATION (OPDATERET FOR AUTOHIDING) ===== */
+header {
+    background: var(--header-bg);
+    color: var(--light-text-color);
+    padding: 0.8rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    /* VIGTIGT: Tilføj en transition for en jævn bevægelse */
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Ny klasse til at skjule headeren */
+header.header-hidden {
+    transform: translateY(-100%); /* Flytter headeren op med sin egen højde */
+}
+
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Fjerner understregning hvis a-tagget har .logo-container */
+}
+
+.logo-container .logo-img {
+    max-height: 60px; /* <<< JUSTER LOGO STØRRELSE HER */
+    width: auto;
+    margin-right: 10px; /* Kun relevant hvis du har tekst ved siden af logoet */
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+    display: none; /* Skjult som standard, vises via media query */
+}
+.desktop-nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.desktop-nav ul li {
+    margin-left: 20px;
+}
+.desktop-nav ul li a {
+    color: var(--light-text-color);
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    font-weight: 500;
+    font-family: var(--font-primary);
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.desktop-nav ul li a:hover,
+.desktop-nav ul li a.active-link { /* Tilføj .active-link manuelt til det aktive menupunkt i HTML, hvis ønsket */
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--accent-color);
+}
+
+.page-images {
+  align-content: center;
+  margin-left: 18%;
+}
+
+/* Burger Menu Knap */
+.burger-menu {
+    display: none; /* Skjult som standard, vises via media query */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1002; /* Over off-screen menuen når den er lukket */
+    position: relative;
+}
+.burger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--light-text-color);
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Off-Screen Menu */
+.off-screen-menu {
+    background-color: #2a2a2a; /* Lidt mørkere end header-bg for kontrast */
+    height: 100vh;
+    width: 280px;
+    max-width: 75%; /* Max 75% af skærmbredden */
+    position: fixed;
+    top: 0;
+    right: -100%; /* Start helt ude (skjult) */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Juster til 'center' for vertikalt centrerede links */
+    align-items: stretch; /* Strækker items (som <ul>) til fuld bredde */
+    padding-top: 70px; /* Giver plads øverst, f.eks. til et lukkeikon eller logo */
+    transition: right 0.35s cubic-bezier(0.77, 0, 0.175, 1); /* Smoothere animation */
+    z-index: 1001;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.25);
+}
+.off-screen-menu.active {
+    right: 0; /* Viser menuen */
+}
+.off-screen-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.off-screen-menu ul li {
+    width: 100%;
+}
+.off-screen-menu ul li a {
+    display: block;
+    padding: 18px 25px;
+    color: var(--light-text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-family: var(--font-primary);
+    border-bottom: 1px solid #383838; /* Mørkere skillelinje */
+    transition: background-color 0.2s ease, color 0.2s ease;
+    text-align: left; /* Eller center */
+}
+.off-screen-menu ul li a:hover {
+    background-color: var(--accent-color);
+    color: var(--light-text-color); /* Sørg for at teksten stadig er læselig */
+}
+.off-screen-menu ul li:last-child a {
+    border-bottom: none;
+}
+
+/* ===== MAIN CONTENT AREA ===== */
+main {
+    padding: 30px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: calc(100vh - 160px); /* Ca. (header højde + footer højde), juster efter behov */
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+.homepage-main h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.homepage-main .tagline {
+    font-size: 1.3rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.content-page h1, .title /* .title er en ekstra klasse du havde, men .content-page h1 dækker det nok */ {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    font-size: 2.2rem;
+    border-bottom: 3px solid var(--accent-color);
+
+}
+
+/* ===== HOMEPAGE SECTIONS ===== */
+.sections-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Lidt mindre min bredde for fleksibilitet */
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.section-link {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+.section-link:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+.section-link img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+.section-link:hover img {
+    transform: scale(1.08); /* Lidt mindre zoom */
+}
+.section-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--light-text-color);
+    padding: 12px 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: var(--font-primary);
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+.section-link:hover .section-title {
+    background-color: rgba(var(--accent-color-rgb), 0.8); /* Eksempel: Brug accentfarve, hvis du definerer accent-color-rgb */
+    /* Eller: background-color: rgba(0,0,0,0.85); */
+}
+
+/* ===== PRICING PAGE STYLING ===== */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive kolonner */
+    gap: 30px; /* Mellemrum mellem kortene */
+    margin-top: 40px;
+    align-items: stretch; /* Sørger for at kortene strækker sig lige højt, hvis de er i rækker */
+}
+
+.pricing-card {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px 25px;
+    text-align: center;
+    display: flex; /* Gør kortet til en flex-container */
+    flex-direction: column; /* Arrangerer indhold vertikalt */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.pricing-card h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+}
+
+.pricing-card-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0 auto 20px auto;
+    max-width: 90%;
+    min-height: 50px; /* Giver en minimumshøjde for at justere kortene */
+}
+
+.pricing-card .price {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+.pricing-card .price span {
+    font-size: 1.2rem; /* Til tekst som "kr." eller "/ time" */
+    font-weight: 400;
+    color: #555;
+    vertical-align: middle;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: left; /* Gør liste-tekst venstrestillet for læsbarhed */
+}
+
+.features-list li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.features-list .check-mark {
+    color: #28a745; /* Grøn farve for flueben */
+    font-weight: bold;
+    margin-right: 10px;
+    line-height: 1.4; /* Juster for at matche teksthøjde */
+}
+
+.pricing-card .cta-button {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+    margin-top: auto; /* <<< MAGIEN: Skubber knappen til bunden af kortet */
+}
+
+.pricing-card .cta-button:hover {
+    background-color: var(--accent-color);
+}
+
+
+/* Styling for det fremhævede kort */
+.pricing-card.highlighted {
+    transform: scale(1.05); /* Gør det en smule større */
+    border: 2px solid var(--accent-color);
+    position: relative;
+    overflow: hidden; /* Nødvendigt for banneret */
+}
+.pricing-card.highlighted .cta-button {
+    background-color: var(--accent-color);
+}
+.pricing-card.highlighted .cta-button:hover {
+    background-color: #0056b3; /* Mørkere accentfarve */
+}
+
+/* "Mest Populære" Banner */
+.highlight-banner {
+    position: absolute;
+    top: 35px;
+    right: -30px;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 5px 30px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transform: rotate(45deg);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Justering for mobil */
+@media (max-width: 900px) {
+    .pricing-card.highlighted {
+        transform: scale(1); /* Fjern skalering på mindre skærme for at spare plads */
+    }
+}
+
+/* ===== CONTACT FORM & INFO ===== */
+.contact-info {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0 5px 5px 0;
+}
+.contact-form div {
+    margin-bottom: 15px;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #500;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+
+}
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.2); /* Eksempel med blås RGBa for accent */
+    outline: none;
+}
+.contact-form button {
+    background: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: var(--font-primary);
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.contact-form button:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* ===== EVENTS LIST (Galleri.html) ===== */
+.event-list {
+    list-style: none;
+    padding: 0;
+}
+.event-list li {
+    margin-bottom: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: #fff;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    overflow: hidden;
+}
+.event-list li:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+.event-list li a {
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+    padding: 20px 25px;
+}
+.event-list li a:hover h2 {
+    color: var(--accent-color);
+}
+.event-list h2 {
+    margin-bottom: 8px;
+    font-size: 1.6rem;
+}
+.event-list p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* ===== PHOTO GALLERY (individual event pages) ===== */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Lidt mindre for flere i bredden */
+    gap: 15px;
+    margin-top: 25px;
+}
+.photo-item {
+    border: 1px solid var(--border-color);
+    padding: 8px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 6px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.photo-item:hover {
+    transform: scale(1.03); /* Lidt mindre zoom */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.photo-item img {
+    width: 100%;
+    height: 140px; /* Juster efter behov */
+    object-fit: cover;
+    display: block;
+    margin-bottom: 8px;
+    border-radius: 4px;
+}
+.photo-item figcaption {
+    font-size: 0.85em;
+    color: #555;
+    font-weight: 500;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: var(--header-bg);
+    color: #aaa;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+footer p a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.9rem
+}
+footer p a:hover {
+    color: var(--accent-color);
+}
+
+/* Specifik styling for mailto links */
+a[href^="mailto:"] {
+    color: black; /* Sæt din ønskede farve for mailto links her */
+
+}
+
+a[href^="mailto:"]:hover {
+    color: darkgrey; /* Sæt din ønskede hover-farve for mailto links her */
+}
+
+/* ===== RESPONSIVE JUSTERINGER ===== */
+
+/* Mobil & Tablet (op til 768px) */
+@media (max-width: 700px) {
+    .desktop-nav {
+        display: none; /* Skjul desktop nav */
+    }
+    .burger-menu {
+        display: block; /* Vis burger knap */
+    }
+
+    /* Burger animation når menuen er aktiv */
+    .burger-menu.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .burger-menu.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .sections-container {
+        grid-template-columns: 1fr; /* En kolonne for sektioner */
+    }
+    .homepage-main h1 {
+        font-size: 2rem;
+    }
+    .homepage-main .tagline {
+        font-size: 1.1rem;
+    }
+    .content-page h1 {
+        font-size: 1.8rem;
+    }
+    .photo-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* Mindre thumbnails på mobil */
+    }
+}
+
+/* Større skærme (fra 769px og op) */
+@media (min-width: 769px) {
+    .desktop-nav {
+        display: flex; /* Vis desktop nav */
+    }
+    .burger-menu {
+        display: block; /* Skjul burger knap */
+    }
+    .burger-menu.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .burger-menu.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+}
+
+
+
+/* ===== LIGHTBOX STYLING ===== */
+.lightbox-overlay {
+    position: fixed; /* Dækker hele skærmen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Mørk, semi-transparent baggrund */
+    display: none; /* Skjult som standard */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Skal være over alt andet */
+    padding: 20px;
+    cursor: pointer; /* Indikerer at man kan klikke for at lukke */
+    overflow-y: auto; /* Tillad scroll hvis billedet er meget højt */
+}
+
+.lightbox-overlay.active {
+    display: flex; /* Vises når aktiv */
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90vw;    /* Maksimal bredde ift. viewport width */
+    max-height: 70vh;   /* Maksimal højde ift. viewport height */
+    display: flex;      /* For at centrere billedet hvis det er mindre end max-mål */
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content img {
+    display: block;
+    max-width: 80%;    /* Billedet skalerer inden i .lightbox-content */
+    max-height: 50%;   /* Billedet skalerer inden i .lightbox-content */
+    object-fit: contain; /* Bevarer proportioner, passer indenfor rammen */
+    border: 3px solid white;
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+    cursor: default; /* Normal cursor over selve billedet */
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -10px; /* Juster position efter behov */
+    right: -10px; /* Juster position efter behov */
+    font-size: 2.5rem;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px; /* Centrerer X'et vertikalt */
+    text-align: center;
+    cursor: pointer;
+    z-index: 2001; /* Over billedet men under overlay click-to-close */
+    transition: transform 0.2s ease;
+}
+.lightbox-close:hover {
+    transform: scale(1.1);
+}
+
+/* Optional: Animation for lightbox fade-in/out */
+.lightbox-overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.lightbox-overlay.active {
+    opacity: 1;
+}
+
+/* ===== LIGHTBOX STYLING (UDVIDET MED NAVIGATION) ===== */
+/* ... din eksisterende .lightbox-overlay, .lightbox-content, .lightbox-content img, .lightbox-close styling ... */
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px; /* Bredde på pil-knappen */
+    height: 40px; /* Højde på pil-knappen */
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    font-size: 2rem; /* Størrelse på pil-ikonet */
+    line-height: 40px; /* Centrerer pilen vertikalt */
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%; /* Gør dem runde */
+    user-select: none; /* Forhindrer tekstmarkering af pilen */
+    transition: background-color 0.2s ease;
+    z-index: 2002; /* Over billedet, men under close knappen hvis de overlapper */
+}
+
+.lightbox-nav:hover {
+    background-color: rgba(0,0,0,0.7);
+}
+
+.lightbox-prev {
+    left: 15px; /* Position for "forrige" pil */
+}
+
+.lightbox-next {
+    right: 15px; /* Position for "næste" pil */
+}
+
+/* Skjul pile hvis der kun er ét billede, eller man er ved første/sidste (håndteres af JS) */
+.lightbox-nav.disabled {
+    display: none; /* Eller opacity: 0.5; pointer-events: none; */
+
+}
+
+/* ===== DOWNLOAD LINK STYLING ===== */
+.photo-item figcaption .download-link {
+    display: block; /* Eller inline-block hvis du vil have det ved siden af nummeret */
+    margin-top: 8px; /* Lidt afstand */
+    padding: 5px 10px;
+    font-size: 0.8em;
+    color: white;
+    background-color: var(--accent-color); /* Eller en anden farve */
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.photo-item figcaption .download-link:hover {
+    background-color: #0056b3; /* Lidt mørkere version af accent-farven */
+}
+
+
+
+.photo-item figcaption .download-link:hover {
+  margin-top: 8px; /* Lidt afstand */
+  padding: 5px 10px;
+  font-size: 0.8em;
+  color: white;
+  background-color: var(--accent-color); /* Eller en anden farve */
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  background-color: #0056b3; /* Lidt mørkere version af accent-farven */
+}
+
+
+
+.intro-text { /* Du kan genbruge denne klasse fra tidligere, hvis du har den */
+    text-align: center;
+    font-size: 1.1rem; /* Lidt mindre end den generelle p, hvis ønsket */
+    line-height: 1.8;
+    color: #555;
+    max-width: 700px; /* Begræns bredden for bedre læsbarhed */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+
+.contact-information-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive kolonner */
+    gap: 30px; /* Mellemrum mellem kontaktmetoderne */
+    margin-top: 30px;
+}
+
+.contact-method {
+    background-color: #f9f9f9; /* Lys baggrund for hver boks */
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center; /* Centrerer indhold i boksen */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.contact-method:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.contact-method h2 {
+    font-size: 1.5rem; /* Størrelse på overskrift (Email, Instagram, TikTok) */
+    color: var(--primary-color);
+    margin-top: 0; /* Fjerner top margin fra h1,h2,h5 reglen her */
+    margin-bottom: 10px;
+}
+
+.contact-method p {
+    font-size: 0.95rem; /* Størrelse på beskrivende tekst */
+    color: #666;
+    margin-bottom: 15px;
+    /* Nulstil side-margener for p inde i .contact-method hvis din generelle p har dem */
+    margin-left: 0;
+    margin-right: 0;
+    line-height: 1.6;
+}
+
+.contact-link {
+    display: inline-block; /* For at padding og styling virker korrekt */
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid transparent; /* Forbereder til hover-effekt */
+
+}
+
+/* Specifikke farver for links/knapper */
+.contact-link.email {
+    color: #fff;
+    background-color: #D44638; /* Gmail-rødlig */
+    border-color: #D44638;
+}
+.contact-link.email:hover {
+    background-color: #B23121;
+    border-color: #B23121;
+}
+
+.contact-link.instagram {
+    color: #fff;
+    /* Instagram gradient - kan være kompleks, her er en simpel lilla */
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    border: none; /* Fjerner border hvis gradient bruges */
+}
+.contact-link.instagram:hover {
+    opacity: 0.9; /* Lettere måde at vise hover på gradienter */
+}
+
+.contact-link.tiktok {
+    color: #fff;
+    background-color: #000000; /* TikTok sort */
+    /* TikTok har også pink/cyan accenter, man kan lege med border eller tekstfarve */
+    border-color: #000000;
+    text-align: center;
+}
+.contact-link.tiktok:hover {
+    background-color: #222; /* Lidt lysere sort */
+}

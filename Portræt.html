@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portræt billeder</title> <!-- CHANGE TITLE FOR EACH PAGE -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+  <div class="logo-container">
+      <a href="index.html" class="logo-container"> <!-- Sørg for .logo-container klasse her for CSS -->
+          <img src="images/LogoHvid.png" alt="G&L Visuals Logo" class="logo-img">
+      </a>
+  </div>
+
+  <div class="header-title">
+    <h4>G&L Visuals</h4>
+  </div>
+
+  <!-- Burger Menu Knap (vises kun på mobil) -->
+  <button class="burger-menu" id="burgerMenu" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+  </button>
+
+  <!-- Off-Screen Menu (skjult som standard, vises ved burger-klik) -->
+  <div class="off-screen-menu" id="offScreenMenu">  <!-- Tilføjet ID for JavaScript -->
+      <ul>
+          <li><a href="Index.html">Forside</a></li> <!-- Tilføjet forside link -->
+          <li><a href="Galleri.html">Galleri</a></li>
+          <li><a href="Priser.html">Priser</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="brugeraftale.html">Brugeraftale</a></li>
+      </ul>
+  </div>
+</header>
+
+    <main class="content-page">
+        <h1>Portræt fotografering</h1> <!-- CHANGE HEADING FOR EACH PAGE -->
+        <p>Denne side er under udvikling.</p>
+        <!-- Add more content specific to this page -->
+        <img src="images/wedding-sample.jpg" alt="" style="max-width:100%; height:auto; margin-top: 20px;">
+    </main>
+
+    <footer>
+      <p>© <span id="currentYear"></span> G&L Visuals. All rights reserved.</p>
+      <a class="footer-email-link" href="mailto:kontakt@dbtphotography.dk"><h6>kontakt@dbtphotography.dk</h6></a>
+      <p><a class="footer-link" href="brugeraftale.html">Brugeraftale</a></p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

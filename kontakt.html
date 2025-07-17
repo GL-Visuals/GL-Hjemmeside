@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G&L Visuals - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+  <div class="logo-container">
+      <a href="index.html" class="logo-container"> <!-- Sørg for .logo-container klasse her for CSS -->
+          <img src="images/LogoHvid.png" alt="G&L Visuals Logo" class="logo-img">
+      </a>
+  </div>
+
+<div class="header-title">
+  <h4>G&L Visuals</h4>
+</div>
+
+  <!-- Burger Menu Knap (vises kun på mobil) -->
+  <button class="burger-menu" id="burgerMenu" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+  </button>
+
+  <!-- Off-Screen Menu (skjult som standard, vises ved burger-klik) -->
+
+  <div class="off-screen-menu" id="offScreenMenu">  <!-- Tilføjet ID for JavaScript -->
+      <ul>
+          <li><a href="Index.html">Forside</a></li> <!-- Tilføjet forside link -->
+          <li><a href="Galleri.html">Galleri</a></li>
+          <li><a href="Priser.html">Priser</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="brugeraftale.html">Brugeraftale</a></li>
+      </ul>
+  </div>
+</header>
+
+      <main class="content-page">
+          <h1>Kontakt Os</h1>
+          <p class="intro-text">Vi hører meget gerne fra dig! Uanset om du har spørgsmål, ønsker et tilbud, eller bare vil sige hej, så tøv ikke med at tage kontakt via en af nedenstående kanaler.</p>
+
+          <div class="contact-information-section">
+              <div class="contact-method">
+                  <h2>Email</h2>
+                  <p>Den hurtigste måde at få et detaljeret svar på.</p>
+                  <a href="mailto:kontakt.glvisuals@gmail.com" class="contact-link email">kontakt.glvisuals@gmail.com</a>
+              </div>
+
+              <div class="contact-method">
+                  <h2>Instagram</h2>
+                  <p>Følg os og se vores seneste arbejde, eller send os en direkte besked.</p>
+                  <a href="https://www.instagram.com/gl.visualsdk/" target="_blank" rel="noopener noreferrer" class="contact-link instagram">@gl.visualsdk</a>
+                  <!-- target="_blank" åbner linket i en ny fane -->
+                  <!-- rel="noopener noreferrer" er for sikkerhed og privatliv -->
+              </div>
+
+              <div class="contact-method">
+                  <h2>TikTok</h2>
+                  <p>Se behind-the-scenes, tips og sjove klip på vores TikTok.</p>
+                  <a href="https://www.tiktok.com/@gl.visuals" target="_blank" rel="noopener noreferrer" class="contact-link tiktok">@gl.visuals</a>
+              </div>
+          </div>
+
+</main>
+
+
+
+<footer>
+  <p>© <span id="currentYear"></span> G&L Visuals. All rights reserved.</p>
+  <a class="footer-email-link" href="mailto:kontakt.glvisuals@gmail.com"><h6>kontakt.glvisuals@gmail.com</h6></a>
+  <p><a class="footer-link" href="brugeraftale.html">Brugeraftale</a></p>
+
+</footer>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>

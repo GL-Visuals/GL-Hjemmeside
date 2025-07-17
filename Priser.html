@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prisliste - G&L Visuals</title>
+    <!-- Linker til din eksisterende stylesheet for at bevare designet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Inkluder dine Google Fonts links, så siden ser korrekt ud -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lato:wght@400;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+      <div class="logo-container">
+          <a href="index.html" class="logo-container"> <!-- Sti: op et niveau til index.html -->
+              <img src="images/LogoHvid.png" alt="G&L Visuals Logo" class="logo-img"> <!-- Sti: op et niveau til images mappen -->
+          </a>
+      </div>
+
+      <div class="header-title"> <!-- Din custom titel i headeren -->
+        <h4>G&L Visuals</h4>
+      </div>
+
+      <!-- Burger Menu Knap (vises kun på mobil) -->
+      <button class="burger-menu" id="burgerMenu" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
+
+      <!-- Off-Screen Menu (skjult som standard, vises ved burger-klik) -->
+      <div class="off-screen-menu" id="offScreenMenu">
+          <ul>
+              <li><a href="Index.html">Forside</a></li>
+              <li><a href="Galleri.html">Galleri</a></li>
+              <li><a href="Priser.html">Priser</a></li>
+              <li><a href="kontakt.html">Kontakt</a></li>
+              <li><a href="brugeraftale.html">Brugeraftale</a></li>
+          </ul>
+      </div>
+  </header>
+
+    <!-- INGEN HEADER PÅ DENNE SIDE -->
+
+    <main class="content-page">
+        <h1>Prisliste & Pakkeoversigt</h1>
+        <p class="intro-text">
+            Her er en oversigt over vores standard prispakker. Vi ved, at hvert projekt er unikt,
+            så tøv ikke med at kontakte os for et skræddersyet tilbud, der passer præcis til dine behov.
+        </p>
+
+        <div class="pricing-grid">
+
+            <!-- PRISKORT 1: Produktfoto -->
+            <div class="pricing-card">
+                <h2>Produktfoto</h2>
+                <p class="pricing-card-description">Perfekt til webshops, kataloger og markedsføring.</p>
+                <div class="price">Fra 75,- kr. pr. produkt</div>
+                <ul class="features-list">
+                  <li><span class="check-mark">✓</span> Digital levering i høj opløsning</li>
+                    <li><span class="check-mark">✓</span> Fotografering i fotostudie, og professionel redigering </li>
+                    <li><span class="check-mark">✓</span> Fritlagt på hvid/sort baggrund</li>
+                    <li><span class="check-mark">✓</span> Levering inden for 4 dage</li>
+                    <li><span class="check-mark">✓</span> 3-6 billeder for hvert produkt</li>
+                    <li><span class="check-mark">✓</span> 10 produkter for 600 kr. </li>
+                </ul>
+                <!-- INGEN KNAP HER -->
+            </div>
+
+            <!-- PRISKORT 2: Sport (Fremhævet) -->
+            <div class="pricing-card highlighted">
+                <!-- <div class="highlight-banner">Mest Populære</div> -->
+                <h2>Sport</h2>
+                <p class="pricing-card-description">Indfang de afgørende øjeblikke i kampen eller stævnet.</p>
+                <div class="price">Fra 750,- kr.</div>
+                <ul class="features-list">
+                  <li><span class="check-mark">✓</span> Digital levering i høj opløsning</li>
+                    <li><span class="check-mark">✓</span> Fuld dækning af kamp/event op til 2 timer</li>
+                    <li><span class="check-mark">✓</span> Pakke med 20 billeder</li>
+                    <li><span class="check-mark">✓</span> Redigering på alle billeder</li>
+                    <li> Ekstra billeder sælges for 25,- kr. pr. billede </li>
+                </ul>
+                <!-- INGEN KNAP HER -->
+            </div>
+
+            <!-- PRISKORT 3: Events -->
+            <div class="pricing-card">
+                <h2>Events</h2>
+                <p class="pricing-card-description">Dækning af konferencer, firmafester, og fester.</p>
+                <div class="price">400,- kr. / time</div>
+                <ul class="features-list">
+                  <li><span class="check-mark">✓</span> Digital levering i høj opløsning</li>
+                    <li><span class="check-mark">✓</span> Timebaseret dækning (min. 2 timer)</li>
+                    <li><span class="check-mark">✓</span> Stemnings- og situationsbilleder</li>
+                    <li><span class="check-mark">✓</span> Alle gode billeder leveres redigeret</li>
+                    <li><span class="check-mark">✓</span> Diskret og professionel tilstedeværelse</li>
+                </ul>
+                <!-- INGEN KNAP HER -->
+            </div>
+
+            <!-- PRISKORT 4: Enkelte Billeder -->
+            <div class="pricing-card">
+                <h2>Enkelte Billeder</h2>
+                <p class="pricing-card-description">Køb af individuelle digitale filer fra et event-galleri.</p>
+                <div class="price">25,- kr. / stk.</div>
+                <ul class="features-list">
+                    <li><span class="check-mark">✓</span> Digital levering i høj opløsning</li>
+                    <li><span class="check-mark">✓</span> Perfekt til print eller sociale medier</li>
+                    <li><span class="check-mark">✓</span> Mængderabat: 10 billeder for 200,- kr. </li>
+                </ul>
+                <!-- INGEN KNAP HER -->
+            </div>
+
+            <div class="pricing-card">
+                <h2>Portræt billeder</h2>
+                <p class="pricing-card-description">Portrætbilleder i naturen eller i studie.</p>
+                <div> <h2> Aftales via mail, afhængig af opgaven.</h2> </div>
+                <ul class="features-list">
+                    <li><span class="check-mark">✓</span> Digital levering i høj opløsning</li>
+                    <li><span class="check-mark">✓</span> Perfekt til print eller sociale medier</li>
+                    <li><span class="check-mark">✓</span> Mængden af billeder afhænger af opgaven </li>
+                </ul>
+                <!-- INGEN KNAP HER -->
+            </div>
+
+
+        </div>
+    </main>
+
+    <footer>
+      <p>© <span id="currentYear"></span> G&L Visuals. All rights reserved.</p>
+      <a class="footer-email-link" href="mailto:kontakt.glvisuals@gmail.com"><h6>kontakt.glvisuals@gmail.com</h6></a>
+      <p><a class="footer-link" href="brugeraftale.html">Brugeraftale</a></p>
+    </footer>
+
+    <!-- Scriptet er stadig inkluderet for at få det dynamiske årstal i footeren til at virke -->
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roskilde Racing - 02/07/24</title> <!-- SKIFT TITEL FOR HVERT EVENT --> <!-- Sti: op et niveau, så ind i css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <!-- Google Fonts - VIGTIGT at have på alle sider, der bruger custom fonts -->
+    <!-- Ovenstående inkluderer DM Serif Display, Lato og Montserrat. Juster hvis du bruger andre. -->
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html" class="logo-container"> <!-- Sti: op et niveau til index.html -->
+                <img src="images/LogoHvid.png" alt="G&L Visuals Logo" class="logo-img"> <!-- Sti: op et niveau til images mappen -->
+            </a>
+        </div>
+
+        <div class="header-title"> <!-- Din custom titel i headeren -->
+          <h4>G&L Visuals</h4>
+        </div>
+
+        <!-- Burger Menu Knap (vises kun på mobil) -->
+        <button class="burger-menu" id="burgerMenu" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Off-Screen Menu (skjult som standard, vises ved burger-klik) -->
+        <div class="off-screen-menu" id="offScreenMenu">
+            <ul>
+                <li><a href="Index.html">Forside</a></li>
+                <li><a href="Galleri.html">Galleri</a></li>
+                <li><a href="Priser.html">Priser</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="brugeraftale.html">Brugeraftale</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="content-page">
+      <h1>Roskilde Racing 17-08-24</h1> <!-- SKIFT OVERSKRIFT FOR HVERT EVENT -->
+      <p>Du kan gennemgå billederne nedenunder. <br> Tryk på et billede, for at forstørre det. <br> <br> For at downloade med vandmærke, kan du trykke på download knappen. I tilfælde
+      af den ikke virker, kan du højreklikke på billedet for at downloade</p>
+
+              <!--
+                SÅDAN TILFØJER DU BILLEDER:
+                1. Upload dine billeder til en mappe som:
+                   ../images/event-galleries-images/event-2023-10-26-smith-wedding/
+                   (Stien er relativ til RODEN af dit website, når du uploader til en server.
+                    Fra denne HTML-fil er stien til billederne korrekt nedenfor)
+
+                2. For hvert billede, kopier og indsæt <figure> blokken nedenfor.
+                3. Ændr "001.jpg" til dit faktiske billedfilnavn.
+                4. Ændr "Smith Wedding Photo 1" i alt-teksten og "1" i billedteksten.
+            -->
+            <div class="photo-gallery">
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-01.jpg" alt="Billede 1">
+                    <figcaption>1</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-01.jpg" download="roskilderacing-01.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-02.jpg" alt="Billede 2">
+                    <figcaption>2</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-02.jpg" download="roskilderacing-02.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-03.jpg" alt="Billede 3">
+                    <figcaption>3</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-03.jpg" download="roskilderacing-03.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-04.jpg" alt="Billede 4">
+                    <figcaption>4</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-04.jpg" download="roskilderacing-04.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-05.jpg" alt="Billede 5">
+                    <figcaption>5</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-05.jpg" download="roskilderacing-05.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-06.jpg" alt="Billede 6">
+                    <figcaption>6</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-06.jpg" download="roskilderacing-06.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-07.jpg" alt="Billede 7">
+                    <figcaption>7</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-07.jpg" download="roskilderacing-07.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-08.jpg" alt="Billede 8">
+                    <figcaption>8</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-08.jpg" download="roskilderacing-08.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-09.jpg" alt="Billede 9">
+                    <figcaption>9</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-09.jpg" download="roskilderacing-09.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-10.jpg" alt="Billede 10">
+                    <figcaption>10</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-10.jpg" download="roskilderacing-10.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-11.jpg" alt="Billede 11">
+                    <figcaption>11</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-11.jpg" download="roskilderacing-11.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-12.jpg" alt="Billede 12">
+                    <figcaption>12</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-12.jpg" download="roskilderacing-12.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-13.jpg" alt="Billede 13">
+                    <figcaption>13</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-13.jpg" download="roskilderacing-13.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-14.jpg" alt="Billede 14">
+                    <figcaption>14</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-14.jpg" download="roskilderacing-14.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-15.jpg" alt="Billede 15">
+                    <figcaption>15</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-15.jpg" download="roskilderacing-15.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-16.jpg" alt="Billede 16">
+                    <figcaption>16</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-16.jpg" download="roskilderacing-16.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-17.jpg" alt="Billede 17">
+                    <figcaption>17</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-17.jpg" download="roskilderacing-17.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-18.jpg" alt="Billede 18">
+                    <figcaption>18</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-18.jpg" download="roskilderacing-18.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-19.jpg" alt="Billede 19">
+                    <figcaption>19</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-19.jpg" download="roskilderacing-19.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-20.jpg" alt="Billede 20">
+                    <figcaption>20</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-20.jpg" download="roskilderacing-20.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-21.jpg" alt="Billede 21">
+                    <figcaption>21</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-21.jpg" download="roskilderacing-21.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-22.jpg" alt="Billede 22">
+                    <figcaption>22</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-22.jpg" download="roskilderacing-22.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-23.jpg" alt="Billede 23">
+                    <figcaption>23</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-23.jpg" download="roskilderacing-23.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-24.jpg" alt="Billede 24">
+                    <figcaption>24</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-24.jpg" download="roskilderacing-24.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-25.jpg" alt="Billede 25">
+                    <figcaption>25</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-25.jpg" download="roskilderacing-25.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-26.jpg" alt="Billede 26">
+                    <figcaption>26</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-26.jpg" download="roskilderacing-26.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-27.jpg" alt="Billede 27">
+                    <figcaption>27</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-27.jpg" download="roskilderacing-27.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-28.jpg" alt="Billede 28">
+                    <figcaption>28</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-28.jpg" download="roskilderacing-28.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-29.jpg" alt="Billede 29">
+                    <figcaption>29</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-29.jpg" download="roskilderacing-29.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-30.jpg" alt="Billede 30">
+                    <figcaption>30</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-30.jpg" download="roskilderacing-30.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-31.jpg" alt="Billede 31">
+                    <figcaption>31</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-31.jpg" download="roskilderacing-31.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-32.jpg" alt="Billede 32">
+                    <figcaption>32</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-32.jpg" download="roskilderacing-32.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-33.jpg" alt="Billede 33">
+                    <figcaption>33</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-33.jpg" download="roskilderacing-33.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-34.jpg" alt="Billede 34">
+                    <figcaption>34</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-34.jpg" download="roskilderacing-34.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-35.jpg" alt="Billede 35">
+                    <figcaption>35</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-35.jpg" download="roskilderacing-35.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-36.jpg" alt="Billede 36">
+                    <figcaption>36</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-36.jpg" download="roskilderacing-36.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-37.jpg" alt="Billede 37">
+                    <figcaption>37</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-37.jpg" download="roskilderacing-37.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-38.jpg" alt="Billede 38">
+                    <figcaption>38</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-38.jpg" download="roskilderacing-38.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-39.jpg" alt="Billede 39">
+                    <figcaption>39</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-39.jpg" download="roskilderacing-39.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-40.jpg" alt="Billede 40">
+                    <figcaption>40</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-40.jpg" download="roskilderacing-40.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-41.jpg" alt="Billede 41">
+                    <figcaption>41</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-41.jpg" download="roskilderacing-41.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-42.jpg" alt="Billede 42">
+                    <figcaption>42</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-42.jpg" download="roskilderacing-42.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-43.jpg" alt="Billede 43">
+                    <figcaption>43</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-43.jpg" download="roskilderacing-43.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-44.jpg" alt="Billede 44">
+                    <figcaption>44</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-44.jpg" download="roskilderacing-44.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-45.jpg" alt="Billede 45">
+                    <figcaption>45</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-45.jpg" download="roskilderacing-45.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-46.jpg" alt="Billede 46">
+                    <figcaption>46</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-46.jpg" download="roskilderacing-46.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-47.jpg" alt="Billede 47">
+                    <figcaption>47</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-47.jpg" download="roskilderacing-47.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-48.jpg" alt="Billede 48">
+                    <figcaption>48</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-48.jpg" download="roskilderacing-48.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-49.jpg" alt="Billede 49">
+                    <figcaption>49</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-49.jpg" download="roskilderacing-49.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-50.jpg" alt="Billede 50">
+                    <figcaption>50</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-50.jpg" download="roskilderacing-50.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-51.jpg" alt="Billede 51">
+                    <figcaption>51</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-51.jpg" download="roskilderacing-51.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-52.jpg" alt="Billede 52">
+                    <figcaption>52</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-52.jpg" download="roskilderacing-52.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-53.jpg" alt="Billede 53">
+                    <figcaption>53</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-53.jpg" download="roskilderacing-53.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+                <figure class="photo-item">
+                    <img src="images/event-galleries-images/roskilde-racing-event/roskilderacing-54.jpg" alt="Billede 54">
+                    <figcaption>54</figcaption>
+                    <a href="images/event-galleries-images/roskilde-racing-event/roskilderacing-54.jpg" download="roskilderacing-54.jpg" class="download-link">
+                        <button>Download</button>
+                    </a>
+                </figure>
+            </div>
+
+
+    </main>
+
+    <footer>
+      <p>© <span id="currentYear"></span> G&L Visuals. All rights reserved.</p>
+      <a class="footer-email-link" href="mailto:kontakt.glvisuals@gmail.com"><h6>kontakt.glvisuals@gmail.com</h6></a>
+      <p><a class="footer-link" href="brugeraftale.html">Brugeraftale</a></p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

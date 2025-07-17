@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portræt billeder</title> <!-- CHANGE TITLE FOR EACH PAGE -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+  <div class="logo-container">
+      <a href="index.html" class="logo-container"> <!-- Sørg for .logo-container klasse her for CSS -->
+          <img src="images/LogoHvid.png" alt="G&L Visuals Logo" class="logo-img">
+      </a>
+  </div>
+
+  <div class="header-title">
+    <h4>G&L Visuals</h4>
+  </div>
+
+  <!-- Burger Menu Knap (vises kun på mobil) -->
+  <button class="burger-menu" id="burgerMenu" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+  </button>
+
+  <!-- Off-Screen Menu (skjult som standard, vises ved burger-klik) -->
+  <div class="off-screen-menu" id="offScreenMenu">  <!-- Tilføjet ID for JavaScript -->
+      <ul>
+          <li><a href="Index.html">Forside</a></li> <!-- Tilføjet forside link -->
+          <li><a href="Galleri.html">Galleri</a></li>
+            <li><a href="Priser.html">Priser</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="brugeraftale.html">Brugeraftale</a></li>
+      </ul>
+  </div>
+</header>
+
+<body>
+
+ <main class="conten-page">
+
+  <h1>Brugeraftale – Personlig Brug af Fotografier</h1>
+
+  <p>Ved køb og download af billeder fra <strong>G&L Visuals</strong>, accepterer du følgende vilkår:</p>
+
+  <h2>1. Personlig Brugsret</h2>
+  <p>De fotografier, du køber, er udelukkende til personlig og ikke-kommerciel brug. Som kunde har du ikke-ekslusiv
+    brugsret til de billeder du køber. Dette betyder blandt andet:</p>
+  <ul>
+    <li><h3><b>Du må anvende billederne privat, fx som print, baggrundsbillede eller dele dem på dine personlige sociale medier.</b></h3></li>
+    <li><h3><b>Du må ikke videresælge, overdrage, udleje eller give andre rettigheder til billedet.</b></h3></li>
+    <li><h3><b>Du må ikke redigere billederne på en måde, der ændrer deres udtryk eller fjerner vandmærke/ophavsret (hvis anvendt).</b></h3></li>
+  </ul>
+
+  <h2>2. Kommerciel og Reklamemæssig Brug</h2>
+  <p>Virksomheder, foreninger og organisationer må ikke bruge billederne til markedsføring, reklame, tryksager, websites, sociale medier eller andre kommercielle formål uden forudgående skriftlig aftale med <strong>G&L Visuals.</strong></p>
+  <p>Hvis din virksomhed ønsker at benytte et billede til kommerciel brug, bedes I kontakte os direkte via <a href="mailto:kontakt@dbtphotography.dk">kontakt@dbtphotography.dk</a>, så vi kan lave en skræddersyet licensaftale.</p>
+
+  <h2>3. Ophavsret</h2>
+  <p>Alle billeder er beskyttet af ophavsretsloven og tilhører <strong>G&L Visuals</strong>. Ingen overdragelse af ophavsret finder sted ved køb – du opnår kun en begrænset brugsret som beskrevet ovenfor.</p>
+
+  <h2>4. Misligholdelse</h2>
+  <p>Misligholdelse af disse vilkår kan føre til retslige skridt, herunder krav om erstatning og/eller ophavsretskrænkelser i henhold til den danske lovgivning.
+  dette kan også føre til ophævelse af brugsretten uden varsel.</p>
+
+  <h2>5. Spørgsmål og Tvivl</h2>
+  <p>Er du i tvivl om, hvordan du må bruge et billede, eller hvad reglerne for ophavsret betyder i praksis? Så tøv ikke med at kontakte os. Vi hjælper gerne med at afklare, hvad der er tilladt, så du undgår overtrædelser.</p>
+
+ </main>
+
+  <footer>
+    <p>© <span id="currentYear"></span> G&L Visuals. All rights reserved.</p>
+    <a class="footer-email-link" href="mailto:kontakt.glvisuals@gmail.com"><h6>kontakt.glvisuals@gmail.com</h6></a>
+    <p><a class="footer-link" href="brugeraftale.html">Brugeraftale</a></p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event galeri - G&L Visuals</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+  <div class="logo-container">
+      <a href="index.html" class="logo-container"> <!-- Sørg for .logo-container klasse her for CSS -->
+          <img src="images/LogoHvid.png" alt="G&L Visuals Logo" class="logo-img">
+      </a>
+  </div>
+
+  <div class="header-title">
+    <h4>G&L Visuals</h4>
+  </div>
+
+  <!-- Burger Menu Knap (vises kun på mobil) -->
+  <button class="burger-menu" id="burgerMenu" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+  </button>
+
+  <!-- Off-Screen Menu (skjult som standard, vises ved burger-klik) -->
+  <div class="off-screen-menu" id="offScreenMenu">  <!-- Tilføjet ID for JavaScript -->
+      <ul>
+          <li><a href="Index.html">Forside</a></li> <!-- Tilføjet forside link -->
+          <li><a href="Galleri.html">Galleri</a></li>
+          <li><a href="Priser.html">Priser</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="brugeraftale.html">Brugeraftale</a></li>
+      </ul>
+  </div>
+</header>
+
+
+    <main class="content-page">
+        <h1>Event galerier</h1>
+        <p>Gå på udkig i vores galeri fra tidligere events, klik på et link for at se indhold. <br> <br> <b> Hvis du henter billeder med vandmærker
+        og uploader dem på sociale medier, bedes du beholde vandmærket og tagge G&L Visuals' <a href="kontakt.html">instagram</a> eller
+        <a href="kontakt.html">TikTok:)</a> </b> </p>
+
+        <ul class="event-list">
+            <li>
+                <a href="Event-1.html">
+                    <h2>Roskilde racing - August 17, 2024</h2>
+                    <p>Hurtige go-karts, i alle klasser.</p>
+                </a>
+            </li>
+            <li>
+                <a href="Event-2.html">
+                    <h2>CHGP - 2023-2024</h2>
+                    <p>Billedsamling fra Copenhagen Historic Grand Prix.</p>
+                </a>
+            </li>
+            <!-- Add more events here as you shoot them -->
+            <!-- Example:
+            <li>
+                <a href="event-galleries/event-YYYY-MM-DD-clientname.html">
+                    <h2>Event Name - Date</h2>
+                    <p>Short description.</p>
+                </a>
+            </li>
+            -->
+        </ul>
+    </main>
+
+    <footer>
+      <p>© <span id="currentYear"></span> G&L Visuals. All rights reserved.</p>
+      <a class="footer-email-link" href="mailto:kontakt.glvisuals@gmail.com"><h6>kontakt.glvisuals@gmail.com</h6></a>
+      <p><a class="footer-link" href="brugeraftale.html">Brugeraftale</a></p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
